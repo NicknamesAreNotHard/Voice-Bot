@@ -20,7 +20,28 @@ const prefix = config.prefix;
 const discord_token = config.discord_token;
 const content_type = config.content_type;
 
-const client = new Discord.Client();
+const { Client, GatewayIntentBits } = require('discord.js');
+const client = new Client({
+  intents: [
+    GatewayIntentBits.GUILDS,
+    GatewayIntentBits.GUILD_MEMBERS,
+    GatewayIntentBits.GUILD_BANS,
+    GatewayIntentBits.GUILD_EMOJIS_AND_STICKERS,
+    GatewayIntentBits.GUILD_INTEGRATIONS,
+    GatewayIntentBits.GUILD_WEBHOOKS,
+    GatewayIntentBits.GUILD_INVITES,
+    GatewayIntentBits.GUILD_VOICE_STATES,
+    GatewayIntentBits.GUILD_PRESENCES,
+    GatewayIntentBits.GUILD_MESSAGES,
+    GatewayIntentBits.GUILD_MESSAGE_REACTIONS,
+    GatewayIntentBits.GUILD_MESSAGE_TYPING,
+    GatewayIntentBits.DIRECT_MESSAGES,
+    GatewayIntentBits.DIRECT_MESSAGE_REACTIONS,
+    GatewayIntentBits.DIRECT_MESSAGE_TYPING,
+    GatewayIntentBits.GUILD_SCHEDULED_EVENTS
+  ]
+});
+  
 const recordingsPath = makeDir('./recordings');
 var queue = [];
 var isPlaying = false;
@@ -36,13 +57,24 @@ var listening = false;
 
 
 
+client.on('ready', () => {
+  console.log(`Logged in as ${client.user.tag}!`);
+});
+
+client.on('message', msg => {
+  console.log(`Received message: ${msg.content}`);
+});
+
 
 
 client.login(discord_token);
 
 client.on('ready', handleReady.bind(this));
 
-client.on('message', handleMessage.bind(this));
+
+client.on('message', message => {
+  console.log(`Received message: ${message.content}`);
+});
 
 client.on('guildMemberSpeaking', handleSpeaking.bind(this));
 
@@ -51,6 +83,7 @@ function handleReady() {
 }
 
 function handleMessage(message) {
+  console.log("Message Recived");
   if (!message.content.startsWith(prefix)) {
     return;
   }

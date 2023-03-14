@@ -1,8 +1,8 @@
 {
   "wit_api_key": "BLP6LJH5ZYX4PFDYNSWWIZTWPHDK3HU5",
   "yt_api_key": "AIzaSyDNhtqfdYgOAM8tTiNSAcUWv3cFAkrN5u8",
-  "discord_token": "MzY4NjM2NzE5MzI0NDYzMTA3.DMM3Rg.-OqXYgHFmrfqlVSQ62rJTczxtIs",
-  "bot_controller": "370452816235331585",
+  "discord_token": "MTA4MDgyMjYyNDQ3ODg0Mjk2Mg.Gv1R8k.QyBGyY5H-Y4WzM3NXRg_SjFNfqtENUA_keYTk4",
+  "bot_controller": "401418016975224833",
   "content_type": "audio/wav",
-  "prefix": "!"
+  "prefix": "-"
 }
