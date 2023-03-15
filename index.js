@@ -9,6 +9,9 @@ const decode = require('./decodeOpus.js');
 const fs = require('fs');
 const path = require('path');
 const opus = require('node-opus');
+const { Client, Intents } = require('discord.js');
+
+const client = new Client({ intents: [3276799] });
 
 var config = JSON.parse(fs.readFileSync("./settings.json", "utf-8"));
 
@@ -20,6 +23,7 @@ const prefix = config.prefix;
 const discord_token = config.discord_token;
 const content_type = config.content_type;
 
+<<<<<<< Updated upstream
 const { Client, GatewayIntentBits } = require('discord.js');
 const client = new Client({
   intents: [
@@ -42,6 +46,9 @@ const client = new Client({
   ]
 });
   
+=======
+/*const client = new Discord.Client();*/
+>>>>>>> Stashed changes
 const recordingsPath = makeDir('./recordings');
 var queue = [];
 var isPlaying = false;
@@ -55,6 +62,7 @@ var skipReq = 0;
 var skippers = [];
 var listening = false;
 
+<<<<<<< Updated upstream
 
 
 client.on('ready', () => {
@@ -67,6 +75,8 @@ client.on('message', msg => {
 
 
 
+=======
+>>>>>>> Stashed changes
 client.login(discord_token);
 
 client.on('ready', handleReady.bind(this));
@@ -83,7 +93,11 @@ function handleReady() {
 }
 
 function handleMessage(message) {
+<<<<<<< Updated upstream
   console.log("Message Recived");
+=======
+  console.log("RecivedMessgase");
+>>>>>>> Stashed changes
   if (!message.content.startsWith(prefix)) {
     return;
   }
@@ -245,7 +259,7 @@ function commandPlaylist(member, msg) {
     voiceChannel = member.voiceChannel;
   }
 
-  var args = msg;
+  var args = msg;c
   if (args.indexOf(prefix) == 0) {
     args = args.slice(1);
   }

@@ -1,8 +1,13 @@
 {
   "wit_api_key": "BLP6LJH5ZYX4PFDYNSWWIZTWPHDK3HU5",
   "yt_api_key": "AIzaSyDNhtqfdYgOAM8tTiNSAcUWv3cFAkrN5u8",
+<<<<<<< Updated upstream
   "discord_token": "MTA4MDgyMjYyNDQ3ODg0Mjk2Mg.Gv1R8k.QyBGyY5H-Y4WzM3NXRg_SjFNfqtENUA_keYTk4",
   "bot_controller": "401418016975224833",
+=======
+  "discord_token": "MTA4MDgyMjYyNDQ3ODg0Mjk2Mg.GbEe6g.ChVPa5YC4vMfyXIqpe3TmeRtL-9wcKV1Tw9cbI",
+  "bot_controller": "1080822624478842962",  
+>>>>>>> Stashed changes
   "content_type": "audio/wav",
   "prefix": "-"
 }
